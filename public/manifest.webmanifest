@@ -1,0 +1,14 @@
+{
+  "name": "Our Flight Log",
+  "short_name": "Us ♥",
+  "description": "A little flight log, just for you.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a1a3e",
+  "theme_color": "#1a1a3e",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
