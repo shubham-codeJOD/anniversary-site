@@ -209,7 +209,7 @@ export const MEMORIES = [
 
 /* ---------- 8. OUR FLIGHT LOG (timeline) ------------------------------ */
 export const TIMELINE = [
-  { flight: "01", route: "BAH → PNQ", date: "December 2025", title: "The first hello as SOMEONE in your life", text: "Nervous, smiling, and not ready for how much my life was about to change." }, // TODO: REPLACE
+  { flight: "01", route: "BAH → PNQ", date: "December 2025", title: "Meeting you after talking about all the things is life was too special.", text: "Nervous, smiling, and not ready for how much my life was about to change." }, // TODO: REPLACE
   { flight: "02", route: "BAH → BOM", date: "January 2026", title: "Bom Layover", text: "Had my best time in BOM." }, // TODO: REPLACE
   { flight: "02", route: "BAH → PNQ", date: "January 2026", title: "You came back", text: "Two visit turned into a promise that you’d keep coming." }, // TODO: REPLACE
   { flight: "03", route: "BAH → GOI", date: "Febraury 2026", title: "Our first trip together", text: "A small getaway, a big memory." }, // TODO: REPLACE
