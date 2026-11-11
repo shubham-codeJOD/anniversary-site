@@ -173,7 +173,7 @@ function PasswordGate({ onSuccess, onDone }) {
         <motion.div className="pass" initial={{ y: 50, opacity: 0, rotate: -2 }} animate={{ y: 0, opacity: 1, rotate: 0 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
           <motion.section className="pass-main" animate={torn ? { x: -8, rotate: -1.6 } : { x: 0, rotate: 0 }} transition={{ duration: 0.7, ease: "easeOut" }}>
             <div className="pass-head">
-              <span className="airline"><PlaneIcon size={18} /> Love Airlines</span>
+              <span className="airline"><PlaneIcon size={18} /> My Cutesy Janemann Airlines</span>
               <span>Boarding pass</span>
             </div>
             <div className="pass-route">
@@ -415,64 +415,163 @@ function FlightCounter() {
 }
 
 /* ============================ 4. MEMORIES ============================ */
+
 const TILTS = [-3, 2.5, -2, 3, -3.5, 2, -1.5, 3.5];
+
 function Lightbox({ item, index, onClose }) {
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
     const k = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", k);
-    return () => { document.body.style.overflow = prev; window.removeEventListener("keydown", k); };
+
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", k);
+    };
   }, [onClose]);
+
   return (
-    <motion.div className="lightbox" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} role="dialog" aria-modal="true" aria-label={item.title}>
-      <button className="icon-btn lb-close" onClick={onClose} aria-label="Close photo"><X size={22} /></button>
-      <motion.figure className="lb-card" drag="y" dragConstraints={{ top: 0, bottom: 0 }} dragElastic={0.7}
-        onDragEnd={(e, info) => { if (Math.abs(info.offset.y) > 90 || Math.abs(info.velocity.y) > 600) onClose(); }}
-        onClick={(e) => e.stopPropagation()} initial={{ scale: 0.88, y: 30 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, opacity: 0 }}>
+    <motion.div
+      className="lightbox"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={item.title}
+    >
+      <button
+        className="icon-btn lb-close"
+        onClick={onClose}
+        aria-label="Close photo"
+      >
+        <X size={22} />
+      </button>
+
+      <motion.figure
+        className="lb-card"
+        drag="y"
+        dragConstraints={{ top: 0, bottom: 0 }}
+        dragElastic={0.7}
+        onDragEnd={(e, info) => {
+          if (Math.abs(info.offset.y) > 90 || Math.abs(info.velocity.y) > 600) {
+            onClose();
+          }
+        }}
+        onClick={(e) => e.stopPropagation()}
+        initial={{ scale: 0.88, y: 30 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+      >
         <Photo item={item} index={index} className="lb-img" />
-        <figcaption>
-          <span className="lb-meta">{item.date} · {item.location}</span>
+
+        <figcaption className="lb-caption-content">
+          <h3 className="lb-title">{item.title}</h3>
+          <span className="lb-meta">
+            {item.date} · {item.location}
+          </span>
           <span className="lb-cap">{item.caption}</span>
         </figcaption>
       </motion.figure>
+
       <p className="lb-hint">Swipe up or down to close</p>
     </motion.div>
   );
 }
+
 function MemoriesCarousel() {
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(null);
   const reduce = useReducedMotion();
+
   const close = useCallback(() => setOpen(null), []);
+
   return (
     <section id="memories" className="section wide-section">
-      <SectionHead eyebrow="Postcards" title="Little moments, big luggage" sub="Swipe through. Tap a photo to see it bigger." />
+      <SectionHead
+        eyebrow="Postcards"
+        title="Little moments, big luggage"
+        sub="Swipe through. Tap a photo to see it bigger."
+      />
+
       <Reveal>
-        <Swiper className="mem-swiper" modules={[EffectCoverflow, Autoplay, Pagination]} effect="coverflow" grabCursor centeredSlides
-          slidesPerView="auto" slideToClickedSlide rewind
-          coverflowEffect={{ rotate: 26, stretch: 0, depth: 110, modifier: 1, slideShadows: false }}
-          autoplay={reduce ? false : { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true }}
-          pagination={{ clickable: true }} onSlideChange={(s) => setActive(s.activeIndex)}>
+        <Swiper
+          className="mem-swiper"
+          modules={[EffectCoverflow, Autoplay, Pagination]}
+          effect="coverflow"
+          grabCursor
+          centeredSlides
+          slidesPerView="auto"
+          slideToClickedSlide
+          rewind
+          coverflowEffect={{
+            rotate: 26,
+            stretch: 0,
+            depth: 110,
+            modifier: 1,
+            slideShadows: false
+          }}
+          autoplay={
+            reduce
+              ? false
+              : {
+                  delay: 3800,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true
+                }
+          }
+          pagination={{ clickable: true }}
+          onSlideChange={(s) => setActive(s.activeIndex)}
+        >
           {C.MEMORIES.map((m, i) => (
             <SwiperSlide key={i} className="mem-slide">
-              <figure className="polaroid" style={{ "--tilt": `${TILTS[i % TILTS.length]}deg` }}>
-                <p className="mem-meta">{m.date} · {m.location}</p>
-                <button className="mem-photo" onClick={() => i === active && setOpen(i)} aria-label={`Open photo: ${m.title}`}>
+              <figure
+                className="polaroid"
+                style={{
+                  "--tilt": `${TILTS[i % TILTS.length]}deg`
+                }}
+              >
+                <div className="mem-heading">
+                  <h3 className="mem-title">{m.title}</h3>
+                  <p className="mem-meta">
+                    {m.date} · {m.location}
+                  </p>
+                </div>
+
+                <button
+                  className="mem-photo"
+                  onClick={() => i === active && setOpen(i)}
+                  aria-label={`Open photo: ${m.title}`}
+                >
                   <Photo item={m} index={i} />
                 </button>
-                <figcaption className="mem-caption">{m.caption}</figcaption>
+
+                <figcaption className="mem-caption">
+                  {m.caption}
+                </figcaption>
               </figure>
             </SwiperSlide>
           ))}
         </Swiper>
       </Reveal>
+
       <AnimatePresence>
-        {open !== null && <Lightbox key="lb" item={C.MEMORIES[open]} index={open} onClose={close} />}
+        {open !== null && (
+          <Lightbox
+            key="lb"
+            item={C.MEMORIES[open]}
+            index={open}
+            onClose={close}
+          />
+        )}
       </AnimatePresence>
     </section>
   );
 }
+
 
 /* =========================== 5. FLIGHT LOG TIMELINE =========================== */
 function Timeline() {

@@ -36,21 +36,21 @@
    inside the website code. Perfect for a surprise, not for secrets.      */
 // TODO: REPLACE (or leave "GazBob" if that's the one you want)
 const ENV_PASSWORD = import.meta.env.VITE_SITE_PASSWORD; // optional .env override
-export const SITE_PASSWORD = ENV_PASSWORD || "GazBob";
+export const SITE_PASSWORD = ENV_PASSWORD || "lovie";
 export const PASSWORD_CASE_SENSITIVE = false; // false = "gazbob" also works (friendlier on phones)
 
 /* ---------- 2. NAMES ---------------------------------------------------*/
-export const HER_NAME = "Her Name"; // TODO: REPLACE  (shown on the boarding pass & letter)
-export const MY_NAME = "Your Name"; // TODO: REPLACE
+export const HER_NAME = "Gazelle Brian Dourado"; // TODO: REPLACE  (shown on the boarding pass & letter)
+export const MY_NAME = "Shubham Kiran Barathe"; // TODO: REPLACE
 
 /* ---------- 3. DATES ---------------------------------------------------*/
-export const ANNIVERSARY_DATE = "2025-03-14"; // TODO: REPLACE (the day you met / got together)
-export const NEXT_VISIT_DATE = "2026-12-12T19:30:00+05:30"; // TODO: REPLACE (when she lands in Pune next, Pune time)
+export const ANNIVERSARY_DATE = "2025-11-16"; // TODO: REPLACE (the day you met / got together)
+export const NEXT_VISIT_DATE = "2026-11-13T21:55:00+05:30"; // TODO: REPLACE (when she lands in Pune next, Pune time)
 export const LANDED_MESSAGE = "She’s landed. Go hug her."; // shown after the countdown hits zero
 
 /* ---------- 4. BOARDING PASS (password screen) ------------------------ */
 export const FLIGHT = {
-  number: "LOVE 143", // TODO: REPLACE (optional)
+  number: "GF 286", // TODO: REPLACE (optional)
   gate: "♥",
   seat: "Next to me",
   from: { code: "BAH", city: "Bahrain" },
@@ -65,20 +65,20 @@ export const GATE = {
     "Almost, captain! Try again 💕",
     "Still not it… think of us ♥",
   ],
-  hint: "Hint: it’s a nickname only we know.", // TODO: REPLACE (shown after 3 wrong tries; "" to disable)
+  hint: "Hint: You used to call me by this name(lowercase)", // TODO: REPLACE (shown after 3 wrong tries; "" to disable)
 };
 
 /* ---------- 5. HERO ----------------------------------------------------*/
 export const HERO = {
   eyebrow: "BAH → PNQ",
-  headline: "From Bahrain to Pune, every flight was worth it", // TODO: REPLACE (optional)
+  headline: "From Bahrain to Pune, every time you have visited it has been heaven on earth my honbun", // TODO: REPLACE (optional)
   subline: "Happy anniversary, my love", // TODO: REPLACE (optional)
 };
 
 /* ---------- 6. DEPARTURE BOARD (stats) --------------------------------
    "Days since we met" is calculated automatically from ANNIVERSARY_DATE. */
 export const STATS = {
-  flights: 14, // TODO: REPLACE — how many times she has flown to see you
+  flights: 8, // TODO: REPLACE — how many times she has flown to see you
   // BAH → PNQ is roughly 2,540 km one way. Return trips double it.
   kilometres: 14 * 2540 * 2, // TODO: REPLACE (or type a number like 71120)
 };
@@ -90,39 +90,148 @@ export const TIMEZONES = {
 /* ---------- 7. MEMORIES (carousel) ------------------------------------
    image: put your photos in /public/images/ and keep the filenames here.
    If an image can’t be found, a soft placeholder is shown instead.      */
+
 export const MEMORIES = [
-  { image: "/images/memory1.jpg", title: "Arrivals hall", date: "Mar 2025", location: "Pune airport", caption: "The first hug after weeks apart." }, // TODO: REPLACE
-  { image: "/images/memory2.jpg", title: "Chai stop", date: "Apr 2025", location: "Pune", caption: "Chai, rain and you laughing." }, // TODO: REPLACE
-  { image: "/images/memory3.jpg", title: "Sunset drive", date: "May 2025", location: "Sinhagad road", caption: "The sky tried, but you still won." }, // TODO: REPLACE
-  { image: "/images/memory4.jpg", title: "Lazy Sunday", date: "Jun 2025", location: "Home", caption: "Doing nothing, perfectly." }, // TODO: REPLACE
-  { image: "/images/memory5.jpg", title: "City lights", date: "Aug 2025", location: "Pune", caption: "Your hand in mine, always." }, // TODO: REPLACE
-  { image: "/images/memory6.jpg", title: "Little adventure", date: "Oct 2025", location: "Lonavala", caption: "Lost, laughing, found." }, // TODO: REPLACE
-  { image: "/images/memory7.jpg", title: "Airport goodbye", date: "Dec 2025", location: "Pune airport", caption: "The hardest ‘see you soon’." }, // TODO: REPLACE
-  { image: "/images/memory8.jpg", title: "Video-call night", date: "Every night", location: "Bahrain ↔ Pune", caption: "Same moon, two cities." }, // TODO: REPLACE
+  {
+    image: "/images/memory1.jpg",
+    title: "Arrivals hall",
+    date: "Dec 2025",
+    location: "Bom airport",
+    caption: "The first hug after weeks apart."
+  },
+  {
+    image: "/images/memory2.JPG",
+    title: "First Toit stop",
+    date: "Dec 2025",
+    location: "Pune",
+    caption: "Initial thoughts: Never thought I'd bag such a hottie."
+  },
+  {
+    image: "/images/memory3.JPG",
+    title: "First Sephora Hall",
+    date: "Dec 2025",
+    location: "Pune",
+    caption: "I was fascinated by you."
+  },
+  {
+    image: "/images/memory4.jpg",
+    title: "Goodbye of our first trip",
+    date: "Jan 2026",
+    location: "Pune",
+    caption: "Started the new year together. And the hardest ‘see you soon’."
+  },
+  {
+    image: "/images/memory5.jpg",
+    title: "My Bday celebration",
+    date: "Jan 2026",
+    location: "Pune",
+    caption: "Your hand in mine, and us intertwined."
+  },
+  {
+    image: "/images/memory6.jpg",
+    title: "My Desi baddie",
+    date: "Jan 2026",
+    location: "Pune",
+    caption: "Lost, laughing, found, happiest."
+  },
+  {
+    image: "/images/memory7.jpg",
+    title: "Always irritating me",
+    date: "Jan 2026",
+    location: "Pune",
+    caption: "Anytime of the day, you will find a way to irritate me."
+  },
+  {
+    image: "/images/memory8.jpg",
+    title: "Aurika times",
+    date: "Jan 2026",
+    location: "Bom",
+    caption: "Bom street hopping and beautiful times."
+  },
+  {
+    image: "/images/memory9.jpg",
+    title: "Thanks for making my bday special.",
+    date: "Jan 2026",
+    location: "Pune",
+    caption: "Well planned and well executed bday. Thanks bb."
+  },
+  {
+    image: "/images/memory10.jpg",
+    title: "First trip together",
+    date: "Feb 2026",
+    location: "GOI",
+    caption: "Fun, beach, smashing, love."
+  },
+  {
+    image: "/images/memory15.JPG",
+    title: "Cutesy date",
+    date: "Jun 2026",
+    location: "Pune",
+    caption: "Asian food and love."
+  },
+  {
+    image: "/images/memory16.jpg",
+    title: "Hyd cringe club fun",
+    date: "Jul 2026",
+    location: "Hyd",
+    caption: "Can't get over this night. Embarrassing but fun."
+  },
+  {
+    image: "/images/memory17.JPG",
+    title: "Hyd date",
+    date: "Jul 2026",
+    location: "Hyd",
+    caption: "Beautiful escape."
+  },
+  {
+    image: "/images/memory18.jpg",
+    title: "My Home",
+    date: "Sept 2026",
+    location: "Pune",
+    caption: "My home at my home."
+  },
+  {
+    image: "/images/memory19.jpg",
+    title: "Weird, sassy, fun!",
+    date: "Sept 2026",
+    location: "Pune",
+    caption: "A fun couple who knows everything!"
+  },
+  {
+    image: "/images/memory20.JPG",
+    title: "Cute and scary Gazelle.",
+    date: "Sept 2026",
+    location: "Pune",
+    caption: "A nice boy scared of his lovely baddie."
+  }
 ];
+
 
 /* ---------- 8. OUR FLIGHT LOG (timeline) ------------------------------ */
 export const TIMELINE = [
-  { flight: "01", route: "BAH → PNQ", date: "March 2025", title: "The first hello", text: "Nervous, smiling, and not ready for how much my life was about to change." }, // TODO: REPLACE
-  { flight: "02", route: "BAH → PNQ", date: "April 2025", title: "You came back", text: "One visit turned into a promise that you’d keep coming." }, // TODO: REPLACE
-  { flight: "03", route: "BAH → PNQ", date: "June 2025", title: "Our first trip together", text: "A small getaway, a big memory." }, // TODO: REPLACE
-  { flight: "04", route: "BAH → PNQ", date: "September 2025", title: "Meeting my world", text: "You made every person you met fall for you too." }, // TODO: REPLACE
-  { flight: "05", route: "BAH → PNQ", date: "December 2025", title: "A festive landing", text: "The lights were pretty. You were prettier." }, // TODO: REPLACE
-  { flight: "06", route: "BAH → PNQ", date: "Today", title: "Still choosing you", text: "Every flight, every month, every time." }, // TODO: REPLACE
+  { flight: "01", route: "BAH → PNQ", date: "December 2025", title: "The first hello as SOMEONE in your life", text: "Nervous, smiling, and not ready for how much my life was about to change." }, // TODO: REPLACE
+  { flight: "02", route: "BAH → BOM", date: "January 2026", title: "Bom Layover", text: "Had my best time in BOM." }, // TODO: REPLACE
+  { flight: "02", route: "BAH → PNQ", date: "January 2026", title: "You came back", text: "Two visit turned into a promise that you’d keep coming." }, // TODO: REPLACE
+  { flight: "03", route: "BAH → GOI", date: "Febraury 2026", title: "Our first trip together", text: "A small getaway, a big memory." }, // TODO: REPLACE
+  { flight: "04", route: "BAH → BOM", date: "March 2026", title: "Being my world", text: "Fell way too deep with every bit." }, // TODO: REPLACE
+  { flight: "05", route: "BAH → PNQ", date: "June 2026", title: "Finally, seeing you again", text: "Months of waiting, countless countdowns, and one hug that made it all worth it." }, // TODO: REPLACE
+  { flight: "06", route: "BAH → HYD", date: "July 2026", title: "Hyd layover", text: "Hyd will never be the same without you" }, // TODO: REPLACE
+  { flight: "07", route: "BAH → PNQ", date: "Aug 2026", title: "Ptown baby", text: "Beautiful dates and cutesy moments." }, // TODO: REPLACE
+  { flight: "08", route: "BAH → PNQ", date: "Sept 2026", title: "Love and Party chaos", text: "Prettiest wherever you go" }, // TODO: REPLACE
 ];
 
 /* ---------- 9. WHY I LOVE YOU (flip cards) ---------------------------- */
 export const REASONS = [
-  "The way you laugh at your own jokes before the punchline.", // TODO: REPLACE
-  "You turn a 3-hour flight into the shortest distance between us.", // TODO: REPLACE
-  "You are kind to everyone, even on the longest shifts.", // TODO: REPLACE
-  "Your voice notes are my favourite playlist.", // TODO: REPLACE
-  "You make every ordinary day feel like a holiday.", // TODO: REPLACE
-  "You never let the distance win.", // TODO: REPLACE
-  "Your smile when you walk through arrivals.", // TODO: REPLACE
-  "You make me want to be better, gently.", // TODO: REPLACE
-  "You feel like home, wherever we are.", // TODO: REPLACE
-  "Because it’s you. It’s always been you.", // TODO: REPLACE
+  "You make me laugh like no one else ever has.",
+  "You turn a 10-hour journey into the shortest distance between us.",
+  "You are ridiculously pretty, effortlessly hot, and always the best in the room.",
+  "You've always taken care of me, even when I'm miles away.",
+  "No one puts in the kind of effort you do, and I never take that for granted.",
+  "You're an amazing friend, an incredible human, and the most wonderful daughter.",
+  "You make every place feel like home, simply by being there.",
+  "Whether virtually or in person, you always make sure I'm safe, happy, and okay.",
+  "You're strong, independent, smart, and my favourite girlie.",
+  "You're my person. My favourite person, always.",
 ];
 
 /* ---------- 10. THE LETTER ---------------------------------------------
